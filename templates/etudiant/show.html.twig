@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etudiant{% endblock %}
+
+{% block body %}
+    <h1>Etudiant</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ etudiant.id }}</td>
+            </tr>
+            <tr>
+                <th>NomAdherent</th>
+                <td>{{ etudiant.nomAdherent }}</td>
+            </tr>
+            <tr>
+                <th>PrenomAdherent</th>
+                <td>{{ etudiant.prenomAdherent }}</td>
+            </tr>
+            <tr>
+                <th>AdresseMailAdherent</th>
+                <td>{{ etudiant.adresseMailAdherent }}</td>
+            </tr>
+            <tr>
+                <th>DomaineAdherent</th>
+                <td>{{ etudiant.domaineAdherent }}</td>
+            </tr>
+            <tr>
+                <th>Temoignage</th>
+                <td>{{ etudiant.temoignage }}</td>
+            </tr>
+            <tr>
+                <th>ReferenceLinkedin</th>
+                <td>{{ etudiant.referenceLinkedin }}</td>
+            </tr>
+            <tr>
+                <th>Login</th>
+                <td>{{ etudiant.login }}</td>
+            </tr>
+            <tr>
+                <th>MotDePasse</th>
+                <td>{{ etudiant.motDePasse }}</td>
+            </tr>
+            <tr>
+                <th>Classe</th>
+                <td>{{ etudiant.classe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_etudiant_index') }}">back to list</a>
+
+    <a href="{{ path('app_etudiant_edit', {'id': etudiant.id}) }}">edit</a>
+
+    {{ include('etudiant/_delete_form.html.twig') }}
+{% endblock %}

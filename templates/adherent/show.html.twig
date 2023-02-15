@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Adherent{% endblock %}
+
+{% block body %}
+    <h1>Adherent</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ adherent.id }}</td>
+            </tr>
+            <tr>
+                <th>NomAdherent</th>
+                <td>{{ adherent.nomAdherent }}</td>
+            </tr>
+            <tr>
+                <th>PrenomAdherent</th>
+                <td>{{ adherent.prenomAdherent }}</td>
+            </tr>
+            <tr>
+                <th>AdresseMailAdherent</th>
+                <td>{{ adherent.adresseMailAdherent }}</td>
+            </tr>
+            <tr>
+                <th>DomaineAdherent</th>
+                <td>{{ adherent.domaineAdherent }}</td>
+            </tr>
+            <tr>
+                <th>Temoignage</th>
+                <td>{{ adherent.temoignage }}</td>
+            </tr>
+            <tr>
+                <th>ReferenceLinkedin</th>
+                <td>{{ adherent.referenceLinkedin }}</td>
+            </tr>
+            <tr>
+                <th>Login</th>
+                <td>{{ adherent.login }}</td>
+            </tr>
+            <tr>
+                <th>MotDePasse</th>
+                <td>{{ adherent.motDePasse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_adherent_index') }}">back to list</a>
+
+    <a href="{{ path('app_adherent_edit', {'id': adherent.id}) }}">edit</a>
+
+    {{ include('adherent/_delete_form.html.twig') }}
+{% endblock %}

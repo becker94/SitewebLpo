@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AncienEtudiant index{% endblock %}
+
+{% block body %}
+    <h1>AncienEtudiant index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomAdherent</th>
+                <th>PrenomAdherent</th>
+                <th>AdresseMailAdherent</th>
+                <th>DomaineAdherent</th>
+                <th>Temoignage</th>
+                <th>ReferenceLinkedin</th>
+                <th>Login</th>
+                <th>MotDePasse</th>
+                <th>MetierFormation</th>
+                <th>AneeEtude</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ancien_etudiant in ancien_etudiants %}
+            <tr>
+                <td>{{ ancien_etudiant.id }}</td>
+                <td>{{ ancien_etudiant.nomAdherent }}</td>
+                <td>{{ ancien_etudiant.prenomAdherent }}</td>
+                <td>{{ ancien_etudiant.adresseMailAdherent }}</td>
+                <td>{{ ancien_etudiant.domaineAdherent }}</td>
+                <td>{{ ancien_etudiant.temoignage }}</td>
+                <td>{{ ancien_etudiant.referenceLinkedin }}</td>
+                <td>{{ ancien_etudiant.login }}</td>
+                <td>{{ ancien_etudiant.motDePasse }}</td>
+                <td>{{ ancien_etudiant.metierFormation }}</td>
+                <td>{{ ancien_etudiant.aneeEtude ? ancien_etudiant.aneeEtude|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_ancien_etudiant_show', {'id': ancien_etudiant.id}) }}">show</a>
+                    <a href="{{ path('app_ancien_etudiant_edit', {'id': ancien_etudiant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_ancien_etudiant_new') }}">Create new</a>
+{% endblock %}

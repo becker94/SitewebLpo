@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AncienEtudiant{% endblock %}
+
+{% block body %}
+    <h1>AncienEtudiant</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ancien_etudiant.id }}</td>
+            </tr>
+            <tr>
+                <th>NomAdherent</th>
+                <td>{{ ancien_etudiant.nomAdherent }}</td>
+            </tr>
+            <tr>
+                <th>PrenomAdherent</th>
+                <td>{{ ancien_etudiant.prenomAdherent }}</td>
+            </tr>
+            <tr>
+                <th>AdresseMailAdherent</th>
+                <td>{{ ancien_etudiant.adresseMailAdherent }}</td>
+            </tr>
+            <tr>
+                <th>DomaineAdherent</th>
+                <td>{{ ancien_etudiant.domaineAdherent }}</td>
+            </tr>
+            <tr>
+                <th>Temoignage</th>
+                <td>{{ ancien_etudiant.temoignage }}</td>
+            </tr>
+            <tr>
+                <th>ReferenceLinkedin</th>
+                <td>{{ ancien_etudiant.referenceLinkedin }}</td>
+            </tr>
+            <tr>
+                <th>Login</th>
+                <td>{{ ancien_etudiant.login }}</td>
+            </tr>
+            <tr>
+                <th>MotDePasse</th>
+                <td>{{ ancien_etudiant.motDePasse }}</td>
+            </tr>
+            <tr>
+                <th>MetierFormation</th>
+                <td>{{ ancien_etudiant.metierFormation }}</td>
+            </tr>
+            <tr>
+                <th>AneeEtude</th>
+                <td>{{ ancien_etudiant.aneeEtude ? ancien_etudiant.aneeEtude|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_ancien_etudiant_index') }}">back to list</a>
+
+    <a href="{{ path('app_ancien_etudiant_edit', {'id': ancien_etudiant.id}) }}">edit</a>
+
+    {{ include('ancien_etudiant/_delete_form.html.twig') }}
+{% endblock %}
