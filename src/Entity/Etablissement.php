@@ -101,5 +101,10 @@ class Etablissement
    
     }
 
+    
+
+public function __toString(){
+    return $this->getNomEtablissemnt();
+}
   
 }
